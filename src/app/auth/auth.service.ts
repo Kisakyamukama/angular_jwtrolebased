@@ -28,4 +28,8 @@ export class AuthService {
   signUp(info: SignUpInfo): Observable<string> {
     return this.http.post<string>(this.signupUrl, info, httpOptions);
   }
+
+  // storeObservationslip (info: observationslipInfo): Observable<string> {
+  //   return this.http.post<string>(this.signupUrl, info, httpOptions);
+  // }
 }
