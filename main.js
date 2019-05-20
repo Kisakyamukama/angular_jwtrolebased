@@ -1,4 +1,6 @@
 const { app, BrowserWindow } = require('electron');
+const url  =  require('url');
+const path = require('path');
 
 let win;
 function createWindow () {
@@ -8,7 +10,13 @@ win = new BrowserWindow({ width: 800, height: 600, frame: false});
 
 // and load the index.html of the app.
 // win.loadFile(`./dist/wdr/index.html`);
-win.loadURL(`file://${__dirname}./dist/wdr/index.html`);
+// win.loadURL(`file://${__dirname}./dist/wdr/index.html`);
+win.loadURL(url.format({
+    pathname: path.join(__dirname, './dist/wdr/index.html'),
+    protocol:'file:',
+    slashes: true
+
+}));
 
 // Open the DevTools.
 // win.webContents.openDevTools();
