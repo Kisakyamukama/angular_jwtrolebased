@@ -32,7 +32,7 @@ import { ObservationslipformComponent } from './observationslipform/observations
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
-    
+
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
