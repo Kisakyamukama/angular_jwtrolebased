@@ -1,101 +1,293 @@
 export class ObservationslipInfo{
+  Time: string;
+  Date: string;
+  Station: number;
+  stationName: string;
+  TotalAmountOfAllClouds: number;
+  TotalAmountOfLowClouds: number;
+  TypeOfLowClouds1: number;
+  OktasOfLowClouds1: number;
+  HeightOfLowClouds1: number;
+  CLCODEOfLowClouds1: string;
+  TypeOfLowClouds2: number;
+  OktasOfLowClouds2: number;
+  HeightOfLowClouds2: number;
+  CLCODEOfLowClouds2: string;
+  TypeOfLowClouds3: number;
+  OktasOfLowClouds3: number;
+  HeightOfLowClouds3: number;
+  CLCODEOfLowClouds3: string;
+  TypeOfMediumClouds1: number;
+  OktasOfMediumClouds1: number;
+  HeightOfMediumClouds1: number;
+  CLCODEOfMediumClouds1: string;
+  TypeOfMediumClouds2: number;
+  OktasOfMediumClouds2: number;
+  HeightOfMediumClouds2: number;
+  CLCODEOfMediumClouds2: string;
+  TypeOfMediumClouds3: number;
+  OktasOfMediumClouds3: number;
+  HeightOfMediumClouds3: number;
+  CLCODEOfMediumClouds3: string;
+  TypeOfHighClouds1: number;
+  OktasOfHighClouds1: number;
+  HeightOfHighClouds1: number;
+  CLCODEOfHighClouds1: string;
+  TypeOfHighClouds2: number;
+  OktasOfHighClouds2: number;
+  HeightOfHighClouds2: number;
+  CLCODEOfHighClouds2: string;
+  TypeOfHighClouds3: number;
+  OktasOfHighClouds3: number;
+  HeightOfHighClouds3: number;
+  CLCODEOfHighClouds3: string;
+  CloudSearchLightReading: number;
+  Rainfall: string;
+  Dry_Bulb: string;
+  Wet_Bulb: string;
+  Max_Read: number;
+  Max_Reset: number;
+  Min_Read: number;
+  Min_Reset: number;
+  Piche_Read: number;
+  Piche_Reset: number;
+  TimeMarksThermo: number;
+  TimeMarksHygro: number;
+  TimeMarksRainRec: number;
+  Present_Weather: string;
+  Present_WeatherCode: string;
+  Past_Weather: string;
+  Visibility: number;
+  Wind_Direction: string;
+  Wind_Speed: string;
+  Gusting: number;
+  AttdThermo: number;
+  PrAsRead: number;
+  Correction: number;
+  CLP: string;
+  MSLPr: number;
+  TimeMarksBarograph: number;
+  TimeMarksAnemograph: number;
+  OtherTMarks: string;
+  SoilMoisture: string;
+  SoilTemperature: string;
+  sunduration: string;
+  trend: string;
+  windrun: string;
+  speciOrMetar: string;
+  UnitOfWindSpeed: string;
+  IndOrOmissionOfPrecipitation: string;
+  TypeOfStation_Present_Past_Weather: string;
+  HeightOfLowestCloud: string;
+  StandardIsobaricSurface: string;
+  GPM: string;
+  DurationOfPeriodOfPrecipitation: string;
+  GrassMinTemp: string;
+  CI_OfPrecipitation: string;
+  BE_OfPrecipitation: string;
+  IndicatorOfTypeOfIntrumentation: string;
+  SignOfPressureChange: string;
+  Supp_Info: string;
+  VapourPressure: string;
+  T_H_Graph: string;
+  DeviceType: string;
+  SubmittedBy: string;
+  Remarks: string;
+  Approved: number;
 
     constructor(
-  public Time: string,
-  public Date: string,
-  public Station: number,
-  public stationName: string,
-  public TotalAmountOfAllClouds: number,
-  public TotalAmountOfLowClouds: number,
-  public TypeOfLowClouds1: number,
-  public OktasOfLowClouds1: number,
-  public HeightOfLowClouds1: number,
-  public CLCODEOfLowClouds1: string,
-  public TypeOfLowClouds2: number,
-  public OktasOfLowClouds2: number,
-  public HeightOfLowClouds2: number,
-  public CLCODEOfLowClouds2: string,
-  public TypeOfLowClouds3: number,
-  public OktasOfLowClouds3: number,
-  public HeightOfLowClouds3: number,
-  public CLCODEOfLowClouds3: string,
-  public TypeOfMediumClouds1: number,
-  public OktasOfMediumClouds1: number,
-  public HeightOfMediumClouds1: number,
-  public CLCODEOfMediumClouds1: string,
-  public TypeOfMediumClouds2: number,
-  public OktasOfMediumClouds2: number,
-  public HeightOfMediumClouds2: number,
-  public CLCODEOfMediumClouds2: string,
-  public TypeOfMediumClouds3: number,
-  public OktasOfMediumClouds3: number,
-  public HeightOfMediumClouds3: number,
-  public CLCODEOfMediumClouds3: string,
-  public TypeOfHighClouds1: number,
-  public OktasOfHighClouds1: number,
-  public HeightOfHighClouds1: number,
-  public CLCODEOfHighClouds1: string,
-  public TypeOfHighClouds2: number,
-  public OktasOfHighClouds2: number,
-  public HeightOfHighClouds2: number,
-  public CLCODEOfHighClouds2: string,
-  public TypeOfHighClouds3: number,
-  public OktasOfHighClouds3: number,
-  public HeightOfHighClouds3: number,
-  public CLCODEOfHighClouds3: string,
-  public CloudSearchLightReading: number,
-  public Rainfall: string,
-  public Dry_Bulb: string,
-  public Wet_Bulb: string,
-  public Max_Read: number,
-  public Max_Reset: number,
-  public Min_Read: number,
-  public Min_Reset: number,
-  public Piche_Read: number,
-  public Piche_Reset: number,
-  public TimeMarksThermo: number,
-  public TimeMarksHygro: number,
-  public TimeMarksRainRec: number,
-  public Present_Weather: string,
-  public Present_WeatherCode: string,
-  public Past_Weather: string,
-  public Visibility: number,
-  public Wind_Direction: string,
-  public Wind_Speed: string,
-  public Gusting: number,
-  public AttdThermo: number,
-  public PrAsRead: number,
-  public Correction: number,
-  public CLP: string,
-  public MSLPr: number,
-  public TimeMarksBarograph: number,
-  public TimeMarksAnemograph: number,
-  public OtherTMarks: string,
-  public SoilMoisture: string,
-  public SoilTemperature: string,
-  public sunduration: string,
-  public trend: string,
-  public windrun: string,
-  public speciOrMetar: string,
-  public UnitOfWindSpeed: string,
-  public IndOrOmissionOfPrecipitation: string,
-  public TypeOfStation_Present_Past_Weather: string,
-  public HeightOfLowestCloud: string,
-  public StandardIsobaricSurface: string,
-  public GPM: string,
-  public DurationOfPeriodOfPrecipitation: string,
-  public GrassMinTemp: string,
-  public CI_OfPrecipitation: string,
-  public BE_OfPrecipitation: string,
-  public IndicatorOfTypeOfIntrumentation: string,
-  public SignOfPressureChange: string,
-  public Supp_Info: string,
-  public VapourPressure: string,
-  public T_H_Graph: string,
-  public DeviceType: string,
-  public SubmittedBy: string,
-  public Remarks: string,
-  public Approved: number
-    ) {}
+      Time: string,
+      Date: string,
+      Station: number,
+      stationName: string,
+      TotalAmountOfAllClouds: number,
+      TotalAmountOfLowClouds: number,
+      TypeOfLowClouds1: number,
+      OktasOfLowClouds1: number,
+      HeightOfLowClouds1: number,
+      CLCODEOfLowClouds1: string,
+      TypeOfLowClouds2: number,
+      OktasOfLowClouds2: number,
+      HeightOfLowClouds2: number,
+      CLCODEOfLowClouds2: string,
+      TypeOfLowClouds3: number,
+      OktasOfLowClouds3: number,
+      HeightOfLowClouds3: number,
+      CLCODEOfLowClouds3: string,
+      TypeOfMediumClouds1: number,
+      OktasOfMediumClouds1: number,
+      HeightOfMediumClouds1: number,
+      CLCODEOfMediumClouds1: string,
+      TypeOfMediumClouds2: number,
+      OktasOfMediumClouds2: number,
+      HeightOfMediumClouds2: number,
+      CLCODEOfMediumClouds2: string,
+      TypeOfMediumClouds3: number,
+      OktasOfMediumClouds3: number,
+      HeightOfMediumClouds3: number,
+      CLCODEOfMediumClouds3: string,
+      TypeOfHighClouds1: number,
+      OktasOfHighClouds1: number,
+      HeightOfHighClouds1: number,
+      CLCODEOfHighClouds1: string,
+      TypeOfHighClouds2: number,
+      OktasOfHighClouds2: number,
+      HeightOfHighClouds2: number,
+      CLCODEOfHighClouds2: string,
+      TypeOfHighClouds3: number,
+      OktasOfHighClouds3: number,
+      HeightOfHighClouds3: number,
+      CLCODEOfHighClouds3: string,
+      CloudSearchLightReading: number,
+      Rainfall: string,
+      Dry_Bulb: string,
+      Wet_Bulb: string,
+      Max_Read: number,
+      Max_Reset: number,
+      Min_Read: number,
+      Min_Reset: number,
+      Piche_Read: number,
+      Piche_Reset: number,
+      TimeMarksThermo: number,
+      TimeMarksHygro: number,
+      TimeMarksRainRec: number,
+      Present_Weather: string,
+      Present_WeatherCode: string,
+      Past_Weather: string,
+      Visibility: number,
+      Wind_Direction: string,
+      Wind_Speed: string,
+      Gusting: number,
+      AttdThermo: number,
+      PrAsRead: number,
+      Correction: number,
+      CLP: string,
+      MSLPr: number,
+      TimeMarksBarograph: number,
+      TimeMarksAnemograph: number,
+      OtherTMarks: string,
+      SoilMoisture: string,
+      SoilTemperature: string,
+      sunduration: string,
+      trend: string,
+      windrun: string,
+      speciOrMetar: string,
+      UnitOfWindSpeed: string,
+      IndOrOmissionOfPrecipitation: string,
+      TypeOfStation_Present_Past_Weather: string,
+      HeightOfLowestCloud: string,
+      StandardIsobaricSurface: string,
+      GPM: string,
+      DurationOfPeriodOfPrecipitation: string,
+      GrassMinTemp: string,
+      CI_OfPrecipitation: string,
+      BE_OfPrecipitation: string,
+      IndicatorOfTypeOfIntrumentation: string,
+      SignOfPressureChange: string,
+      Supp_Info: string,
+      VapourPressure: string,
+      T_H_Graph: string,
+      DeviceType: string,
+      SubmittedBy: string,
+      Remarks: string,
+      Approved: number
+    ) {
+
+  this.Time=  Time;
+  this.Date=  Date;
+  this.Station=  Station;
+  this.stationName= stationName;
+  this.TotalAmountOfAllClouds= TotalAmountOfAllClouds;
+  this.TotalAmountOfLowClouds= TotalAmountOfLowClouds;
+  this.TypeOfLowClouds1= TypeOfLowClouds1;
+  this.OktasOfLowClouds1= OktasOfLowClouds1;
+  this.HeightOfLowClouds1= HeightOfLowClouds1;
+  this.CLCODEOfLowClouds1= CLCODEOfLowClouds1;
+  this.TypeOfLowClouds2= TypeOfLowClouds2;
+  this.OktasOfLowClouds2= OktasOfHighClouds2;
+  this.HeightOfLowClouds2= HeightOfLowClouds2;
+  this.CLCODEOfLowClouds2= CLCODEOfLowClouds2;
+  this.TypeOfLowClouds3= TypeOfLowClouds3;
+  this.OktasOfLowClouds3= OktasOfLowClouds3;
+  this.HeightOfLowClouds3=  HeightOfLowClouds3;
+  this.CLCODEOfLowClouds3= CLCODEOfLowClouds3;
+  this.TypeOfMediumClouds1= TypeOfMediumClouds1;
+  this.OktasOfMediumClouds1= OktasOfMediumClouds1;
+  this.HeightOfMediumClouds1= HeightOfMediumClouds1;
+  this.CLCODEOfMediumClouds1= CLCODEOfMediumClouds1;
+  this.TypeOfMediumClouds2= TypeOfMediumClouds2;
+  this.OktasOfMediumClouds2= OktasOfMediumClouds2 ;
+  this.HeightOfMediumClouds2= HeightOfMediumClouds2;
+  this.CLCODEOfMediumClouds2= CLCODEOfMediumClouds2 ;
+  this.TypeOfMediumClouds3=  TypeOfMediumClouds3;
+  this.OktasOfMediumClouds3= OktasOfMediumClouds3;
+  this.HeightOfMediumClouds3= HeightOfMediumClouds3;
+  this.CLCODEOfMediumClouds3= CLCODEOfMediumClouds3;
+  this.TypeOfHighClouds1= TypeOfHighClouds1;
+  this.OktasOfHighClouds1= OktasOfHighClouds1;
+  this.HeightOfHighClouds1= HeightOfHighClouds1;
+  this.CLCODEOfHighClouds1= CLCODEOfHighClouds1;
+  this.TypeOfHighClouds2= TypeOfHighClouds2;
+  this.OktasOfHighClouds2= OktasOfHighClouds2;
+  this.HeightOfHighClouds2= HeightOfHighClouds2;
+  this.CLCODEOfHighClouds2= CLCODEOfHighClouds2;
+  this.TypeOfHighClouds3= TypeOfHighClouds3;
+  this.OktasOfHighClouds3= OktasOfHighClouds3;
+  this.HeightOfHighClouds3= HeightOfHighClouds3;
+  this.CLCODEOfHighClouds3= CLCODEOfHighClouds3;
+  this.CloudSearchLightReading= CloudSearchLightReading;
+  this.Rainfall= Rainfall;
+  this.Dry_Bulb= Dry_Bulb;
+  this.Wet_Bulb= Wet_Bulb;
+  this.Max_Read= Max_Read;
+  this.Max_Reset= Max_Reset;
+  this.Min_Read= Min_Read ;
+  this.Min_Reset= Min_Reset;
+  this.Piche_Read= Piche_Read;
+  this.Piche_Reset= Piche_Reset;
+  this.TimeMarksThermo= TimeMarksThermo;
+  this.TimeMarksHygro= TimeMarksHygro;
+  this.TimeMarksRainRec= TimeMarksRainRec;
+  this.Present_Weather=  Present_Weather;
+  this.Present_WeatherCode= Present_WeatherCode;
+  this.Past_Weather=  Past_Weather;
+  this.Visibility=  Visibility;
+  this.Wind_Direction=  Wind_Direction;
+  this.Wind_Speed=  Wind_Speed;
+  this.Gusting=  Gusting;
+  this.AttdThermo= AttdThermo;
+  this.PrAsRead= PrAsRead;
+  this.Correction= Correction;
+  this.CLP= CLP;
+  this.MSLPr= MSLPr;
+  this.TimeMarksBarograph= TimeMarksBarograph;
+  this.TimeMarksAnemograph= TimeMarksAnemograph;
+  this.OtherTMarks= OtherTMarks;
+  this.SoilMoisture= SoilMoisture;
+  this.SoilTemperature= SoilTemperature;
+  this.sunduration= sunduration;
+  this.trend= trend;
+  this.windrun= windrun;
+  this.speciOrMetar= speciOrMetar;
+  this.UnitOfWindSpeed= UnitOfWindSpeed;
+  this.IndOrOmissionOfPrecipitation= IndOrOmissionOfPrecipitation;
+  this.TypeOfStation_Present_Past_Weather= TypeOfStation_Present_Past_Weather;
+  this.HeightOfLowestCloud= HeightOfLowestCloud;
+  this.StandardIsobaricSurface= StandardIsobaricSurface;
+  this.GPM= GPM;
+  this.DurationOfPeriodOfPrecipitation= DurationOfPeriodOfPrecipitation;
+  this.GrassMinTemp= GrassMinTemp ;
+  this.CI_OfPrecipitation= CI_OfPrecipitation;
+  this.BE_OfPrecipitation= BE_OfPrecipitation;
+  this.IndicatorOfTypeOfIntrumentation= IndicatorOfTypeOfIntrumentation;
+  this.SignOfPressureChange= SignOfPressureChange;
+  this.Supp_Info=  Supp_Info;
+  this.VapourPressure= VapourPressure;
+  this.T_H_Graph= T_H_Graph;
+  this.DeviceType= 'desktop' ;
+  this.SubmittedBy= SubmittedBy;
+  this.Remarks= Remarks;
+  this.Approved = Approved;
+    }
   }
   
