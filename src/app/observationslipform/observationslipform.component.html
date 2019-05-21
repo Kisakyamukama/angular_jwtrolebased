@@ -1,0 +1,1089 @@
+<div *ngIf="submitted; else observationslipForm">
+  Observationslip form data added is successfully!
+</div>
+<ng-template #observationslipForm>
+        <aside class="right-side" xmlns="" xmlns="">
+          <section class="content-header">
+              <h1>
+                  Observation/Raw Data
+              </h1>            
+          </section>
+
+           <!-- Main content -->
+        <section>
+
+        <div class="row">
+             <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" n>
+                      <table>
+                        <tr>
+                      <td colspan = "4">
+                          <div class="input-group">
+                              <span class="input-group-addon">Station Name</span>
+                              <input type="text" name="stationName" [(ngModel)]="form.stationName"   class="form-control" #stationName="ngModel"  readonly class="form-control" >
+
+                            </div>
+                      </td>
+
+                      <td colspan = "4">
+                          <div class="input-group">
+                              <span class="input-group-addon"> Station Number</span>
+                              <input type="number" name="Station" [(ngModel)]="form.Station"   class="form-control"  readonly class="form-control" value="" readonly="readonly" >
+                            </div>
+                           </td>
+                           <td colspan = "4">
+
+                              <div class="input-group">
+                                <span class="input-group-addon">Select Date</span>
+                                <input type="text" name="date"  [(ngModel)]="form.Date"  class="form-control compulsory" placeholder="Enter select date" value="" autocomplete='off'>
+                              </div>
+                          </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="6">
+                            <div class="input-group"  >
+                                <span class="input-group-addon">Time category</span>
+                                <select name="metar_speci"  [(ngModel)]="form.speciOrMetar"   class="form-control compulsory">
+                                  <option value="metar">normal</option>
+                                  <option value="speci">speci</option>
+
+                                </select>
+                              </div>
+
+                          </td>
+                          <td colspan="6">
+
+                              <div class="input-group" id="metartimeId"  >
+                                  <span class="input-group-addon">NORMAL TIME</span>
+                                  <select name="Time" [(ngModel)]="form.Time"   class="form-control compulsory">
+                                    <option value="00:00Z">00:00Z</option>
+                                    <option value="00:30Z">00:30Z</option>
+                                    <option value="01:00Z">01:00Z</option>
+                                    <option value="01:30Z">01:30Z</option>
+                                    <option value="02:00Z">02:00Z</option>
+                                    <option value="02:30Z">02:30Z</option>
+                                    <option value="03:00Z">03:00Z</option>
+                                    <option value="03:30Z">03:30Z</option>
+                                    <option value="04:00Z">04:00Z</option>
+                                    <option value="04:30Z">04:30Z</option>
+                                    <option value="05:00Z">05:00Z</option>
+                                    <option value="05:30Z">05:30Z</option>
+                                    <option value="06:00Z">06:00Z</option>
+                                    <option value="06:30Z">06:30Z</option>
+                                    <option value="07:00Z">07:00Z</option>
+                                    <option value="07:30Z">07:30Z</option>
+                                    <option value="08:00Z">08:00Z</option>
+                                    <option value="08:30Z">08:30Z</option>
+                                    <option value="09:00Z">09:00Z</option>
+                                    <option value="09:30Z">09:30Z</option>
+                                    <option value="10:00Z">10:00Z</option>
+                                    <option value="10:30Z">10:30Z</option>
+                                    <option value="11:00Z">11:00Z</option>
+                                    <option value="11:30Z">11:30Z</option>
+                                    <option value="12:00Z">12:00Z</option>
+                                    <option value="12:30Z">12:30Z</option>
+                                    <option value="13:00Z">13:00Z</option>
+                                    <option value="13:30Z">13:30Z</option>
+                                    <option value="14:00Z">14:00Z</option>
+                                    <option value="14:30Z">14:30Z</option>
+                                    <option value="15:00Z">15:00Z</option>
+                                    <option value="15:30Z">15:30Z</option>
+                                    <option value="16:00Z">16:00Z</option>
+                                    <option value="16:30Z">16:30Z</option>
+                                    <option value="17:00Z">17:00Z</option>
+                                    <option value="17:30Z">17:30Z</option>
+                                    <option value="18:00Z">18:00Z</option>
+                                    <option value="18:30Z">18:30Z</option>
+                                    <option value="19:00Z">19:00Z</option>
+                                    <option value="19:30Z">19:30Z</option>
+                                    <option value="20:00Z">20:00Z</option>
+                                    <option value="20:30Z">20:30Z</option>
+                                    <option value="21:00Z">21:00Z</option>
+                                    <option value="21:30Z">21:30Z</option>
+                                    <option value="22:00Z">22:00Z</option>
+                                    <option value="22:30Z">22:30Z</option>
+                                    <option value="23:00Z">23:00Z</option>
+                                    <option value="23:30Z">23:30Z</option>
+                                  </select>
+                                  <input type="hidden" name="diff" id="diff" value=""/>
+                                </div>
+
+
+                                  <div class="input-group" id="specitimeId"  style="display:none;">
+                                  <span class="input-group-addon">SPECI TIME</span>
+
+                                    <div class="input-group bootstrap-timepicker timepicker">
+                                      <input id="timepicker1" type="text" name="speci_time_observationslipform"  id="time_observationslipform"  class="form-control compulsory">
+                                      <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                                    </div>
+                                    <span ng-hide="Time" class="validator">Time  please</span>
+
+                                  <script type="text/javascript">
+                                              $('#timepicker1').timepicker();
+                                          </script>
+                                </div>
+
+
+
+                            </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">
+
+                            <div class="input-group">
+                              <span class="input-group-addon">Total amount of all clouds</span>
+                              <select name="TotalAmountOfAllClouds" [(ngModel)]="form.TotalAmountOfAllClouds"    onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder=" Enter total amount of All clouds" >
+                                <option value="">--Select Total Amount Of All Clouds </option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                              </select>
+                            </div>
+                        </td>
+                        <td colspan="6">
+
+
+                            <div class="input-group">
+                              <span class="input-group-addon">Total amount of low clouds</span>
+                              <select  name="TotalAmountOfLowClouds" [(ngModel)]="form.TotalAmountOfLowClouds" onkeyup="allowIntegerInputOnly(this)"   class="form-control"  placeholder="Enter total amount of Low clouds" >
+                                <option value="">--Select Total Amount of Low Clouds </option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+
+
+                              </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan = "4">
+                          <b>Low</b>
+                        </td>
+                        <td colspan = "4">
+                          <b>Medium</b>
+                        </td>
+                        <td colspan = "4">
+                          <b>High</b>
+                        </td>
+                      </tr>
+                      <tr>
+                          <td><b>type</b></td> <td><b>oktas</b></td> <td><b>height</b></td> <td><b>clcode</b></td> <td><b>type</b></td> <td><b>oktas</b></td>
+                          <td><b>height</b></td> <td><b>clcode</b></td> <td><b>type</b></td> <td><b>oktas</b></td> <td><b>height</b></td> <td><b>clcode</b></td>
+
+                        </tr>
+
+                        <!-- Type 1 clouds -->
+
+                        <tr>
+                            <td>
+                            <select  name="TypeOfLowClouds1"  [(ngModel)]="form.TypeOfLowClouds1"  onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter Type of LOW Cloud" >
+                            <option value=""></option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+
+                            </select>
+                            </td>
+
+                            <td>
+                              <select name="OktasOfLowClouds1"  [(ngModel)]="form.OktasOfLowClouds1"  onkeyup="allowIntegerInputOnly(this)" class="form-control" placeholder="Enter OKTAS  for LOW CLOUD" >
+                              <option value=""></option>
+                              <option value="0">0</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+
+
+                            </select>
+                            </td>
+
+                            <td>
+                              <input type="text" name="HeightOfLowClouds1"   [(ngModel)]="form.HeightOfLowClouds1"  onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="0" style = 'width:70px;'>
+                            </td>
+
+                            <td>
+                              <select  name="CLCODEOfLowClouds1"   [(ngModel)]="form.CLCODEOfLowClouds1"  onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CLCODE of  LOW CLOUD " >
+                              <option value=""></option>
+                              <option value="Sc">Sc</option>
+                              <option value="St">St</option>
+                              <option value="Cu">Cu</option>
+                              <option value="Cb">Cb</option>
+
+                            </select>
+                            </td>
+
+                            <td>
+                              <select name="TypeOfLowClouds2"   [(ngModel)]="form.TypeOfLowClouds2"  onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter TYPE OF MEDIUM CLOUD" >
+                              <option value=""></option>
+                              <option value="0">0</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                              </select>
+                            </td>
+
+                            <td>
+                              <select name="OktasOfLowClouds2"  [(ngModel)]="form.OktasOfLowClouds2"  onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter OKTAS  OF MEDIUM CLOUD" >
+                              <option value=""> </option>
+                              <option value="0">0</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              </select>
+                            </td>
+
+                            <td>
+                              <input type="text" name="HeightOfLowClouds2"   [(ngModel)]="form.HeightOfLowClouds2"  onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder=" 0 " style = "width:70px;">
+                            </td>
+
+                            <td>
+                              <select name="CLCODEOfLowClouds2"   [(ngModel)]="form.CLCODEOfLowClouds2"  onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CL CODE MEDIUM CLOUD " >
+                              <option value=""> </option>
+                              <option value="Ac">Ac</option>
+                              <option value="As">As</option>
+                              <option value="Ns">Ns</option>
+                              </select>
+                            </td>
+                            <td>
+                              <select name="TypeOfLowClouds3"   [(ngModel)]="form.TypeOfLowClouds3"  onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter TYPE OF HIGH CLOUD" >
+                                <option value=""> </option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                              </select>
+                            </td>
+                            <td>
+                               <select name="	OktasOfLowClouds3"  [(ngModel)]="form.OktasOfLowClouds3"  onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter OKTAS OF HIGH CLOUD" >
+                                <option value=""> </option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                              </select>
+                            </td>
+                            <td>
+                               <input type="text" name="HeightOfLowClouds3"   [(ngModel)]="form.HeightOfLowClouds3"  onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder=" 0 " style = "width:70px;">
+                            </td>
+                            <td>
+                              <select name="CLCODEOfLowClouds3"   [(ngModel)]="form.CLCODEOfLowClouds3"  onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CLCODE OF MEDIUM CLOUD " >
+                                <option value=""></option>
+                                <option value="Cl">Cl</option>
+                                <option value="Cc">Cc</option>
+                                <option value="Cs">Cs</option>
+
+                              </select>
+                            </td>
+                          </tr>
+
+                          <!--  Type 2 clouds -->
+
+                          <tr>
+                              <td>
+                                <select  name="TypeOfMediumClouds1"   [(ngModel)]="form.TypeOfMediumClouds1"  onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter Type of LOW CLOUD" >
+                                <option value=""></option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+
+                                </select>
+                              </td>
+
+                              <td>
+                                <select name="OktasOfMediumClouds1"  [(ngModel)]="form.OktasOfMediumClouds1"  onkeyup="allowIntegerInputOnly(this)" class="form-control" placeholder="Enter OKTAS OF LOW CLOUD" >
+                                <option value=""> </option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                              </select>
+                              </td>
+
+                              <td>
+                                <input type="text" name="HeightOfMediumClouds1"  [(ngModel)]="form.HeightOfMediumClouds1" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="0" style = "width:70px;">
+
+                              </td>
+                              <td>
+                                <select  name="CLCODEOfMediumClouds1"  [(ngModel)]="form.CLCODEOfMediumClouds1" onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CLCODE of LOW CLOUD " >
+                                <option value=""> </option>
+                                <option value="Sc">Sc</option>
+                                <option value="St">St</option>
+                                <option value="Cu">Cu</option>
+                                <option value="Cb">Cb</option>
+                              </select>
+                              </td>
+                              <td>
+                                <select name="TypeOfMediumClouds2"   [(ngModel)]="form.TypeOfMediumClouds2"  onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter TYPE OF MEDIUM CLOUD" >
+                                <option value=""></option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                </select>
+                              </td>
+                              <td>
+                                <select name="OktasOfMediumClouds2"  [(ngModel)]="form.OktasOfMediumClouds2"  onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter OKTAS OF MEDIUM CLOUD" >
+                                <option value=""> </option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                </select>
+                              </td>
+                              <td>
+                                 <input type="text" name="HeightOfMediumClouds2"  [(ngModel)]="form.HeightOfMediumClouds2"  onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder=" 0 "  style = "width: 70px">
+                              </td>
+                              <td>
+                                 <select name="CLCODEOfMediumClouds2"  [(ngModel)]="form.CLCODEOfMediumClouds2"  onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CL CODE OF MEDIUM CLOUD " >
+                                <option value=""> </option>
+                                <option value="Ac">Ac</option>
+                                <option value="As">As</option>
+                                <option value="Ns">Ns</option>
+
+
+                                </select>
+                              </td>
+                              <td>
+                                 <select name="TypeOfMediumClouds3"  [(ngModel)]="form.TypeOfMediumClouds3"  onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter TYPE OF HIGH CLOUD" >
+                                  <option value=""> </option>
+                                  <option value="0">0</option>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                  <option value="6">6</option>
+                                  <option value="7">7</option>
+                                  <option value="8">8</option>
+                                  <option value="9">9</option>
+                                </select>
+                              </td>
+                              <td>
+                                 <select name="OktasOfMediumClouds3"  [(ngModel)]="form.OktasOfMediumClouds3"  onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter OKTAS OF HIGH CLOUD" >
+                                  <option value=""> </option>
+                                  <option value="0">0</option>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                  <option value="6">6</option>
+                                  <option value="7">7</option>
+                                  <option value="8">8</option>
+                                </select>
+                              </td>
+                              <td>
+                                <input type="text" name="HeightOfMediumClouds3"  [(ngModel)]="form.HeightOfMediumClouds3" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder=" 0 " style = "width:70px;">
+                              </td>
+                              <td>
+                                 <select name="CLCODEOfMediumClouds3"   [(ngModel)]="form.CLCODEOfMediumClouds3"  onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CL CODE MEDIUM CLOUD " >
+                                  <option value=""></option>
+                                  <option value="Cl">Cl</option>
+                                  <option value="Cc">Cc</option>
+                                  <option value="Cs">Cs</option>
+                                </select>
+                              </td>
+                            </tr>
+
+                             <!-- Type 3 clouds -->
+                             <tr>
+                                <td>
+                                  <select  name="TypeOfHighClouds1"   [(ngModel)]="form.TypeOfHighClouds1"  onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter Type of low Cloud" >
+                                  <option value=""></option>
+                                  <option value="0">0</option>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                  <option value="6">6</option>
+                                  <option value="7">7</option>
+                                  <option value="8">8</option>
+                                  <option value="9">9</option>
+
+                                </select>
+                                </td>
+
+                                <td>
+                                  <select name="OktasOfHighClouds1"  [(ngModel)]="form.OktasOfHighClouds1"  onkeyup="allowIntegerInputOnly(this)" class="form-control" placeholder="Enter OKTAS of LOW CLOUD" >
+                                  <option value=""> </option>
+                                  <option value="0">0</option>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                  <option value="6">6</option>
+                                  <option value="7">7</option>
+                                  <option value="8">8</option>
+                                </select>
+                                </td>
+
+                                <td>
+                                  <input type="text" name="HeightOfHighClouds1"   [(ngModel)]="form.HeightOfHighClouds1"  onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder=" 0 "  style = "width: 70px;">
+                                </td>
+
+                                <td>
+                                  <select  name="CLCODEOfHighClouds1"   [(ngModel)]="form.CLCODEOfHighClouds1"  onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CLCODE of LOW CLOUD " >
+                                  <option value=""> </option>
+                                  <option value="Sc">Sc</option>
+                                  <option value="St">St</option>
+                                  <option value="Cu">Cu</option>
+                                  <option value="Cb">Cb</option>
+
+                                </select>
+                                </td>
+                                <td>
+                                  <select name="TypeOfHighClouds2"   [(ngModel)]="form.TypeOfHighClouds2"  onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter TYPE OF MEDIUM CLOUD" >
+                                  <option value=""></option>
+                                  <option value="0">0</option>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                  <option value="6">6</option>
+                                  <option value="7">7</option>
+                                  <option value="8">8</option>
+                                  <option value="9">9</option>
+                                  </select>
+                                </td>
+                                <td>
+                                  <select name="OktasOfHighClouds2"  [(ngModel)]="form.OktasOfHighClouds2"  onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter OKTAS OF MEDIUM CLOUD" >
+                                  <option value=""> </option>
+                                  <option value="0">0</option>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                  <option value="6">6</option>
+                                  <option value="7">7</option>
+                                  <option value="8">8</option>
+                                  </select>
+                                </td>
+                                <td>
+                                   <input type="text" name="HeightOfHighClouds2"   [(ngModel)]="form.HeightOfHighClouds2"  onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder=" 0 " style = "width:70px;">
+                                </td>
+                                <td>
+                                   <select name="CLCODEOfHighClouds2"  [(ngModel)]="form.CLCODEOfHighClouds2"  onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CL CODE OF MEDIUM CLOUD " >
+                                     <option value=""> </option>
+                                    <option value="Ac">Ac</option>
+                                    <option value="As">As</option>
+                                    <option value="Ns">Ns</option>
+                                  </select>
+                                </td>
+                                <td>
+                                   <select name="TypeOfHighClouds3"   [(ngModel)]="form.TypeOfHighClouds3"  onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter TYPE HIGH CLOUD" >
+                                    <option value=""></option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                  </select>
+                                </td>
+                                <td>
+                                  <select name="OktasOfHighClouds3"  [(ngModel)]="form.OktasOfHighClouds3" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter OKTAS HIGH CLOUD" >
+                                  <option value=""> </option>
+                                  <option value="0">0</option>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                  <option value="6">6</option>
+                                  <option value="7">7</option>
+                                  <option value="8">8</option>
+                                </select>
+                                </td>
+                                <td>
+                                  <input type="text" name="HeightOfHighClouds3"   [(ngModel)]="form.HeightOfHighClouds3"  onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder=" 0 " style = "width:70px;">
+                                </td>
+                                <td>
+                                   <select name="CLCODEOfHighClouds3"   [(ngModel)]="form.CLCODEOfHighClouds3"  onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder=" Enter CL CODE MEDIUM CLOUD " >
+                                    <option value=""></option>
+                                    <option value="Cl">Cl</option>
+                                    <option value="Cc">Cc</option>
+                                    <option value="Cs">Cs</option>
+                                  </select>
+                                </td>
+                              </tr>
+                              <tr>
+                                  <td colspan="6">
+                                    <div class="input-group">
+                                      <span class="input-group-addon">Cloud Searchlight Alidade Reading</span>
+                                      <input type="text" name="CLCODEOfHighClouds3"  [(ngModel)]="form.CLCODEOfHighClouds3"  onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter Cloud Searchlight Alidade Reading" >
+                                    </div>
+                                  </td>
+                                  <td colspan="6">
+                                    <div class="input-group">
+                                    <span class="input-group-addon">Rainfall(mm)</span>
+                                    <input type="text" name="Rainfall"  [(ngModel)]="form.Rainfall"    class="form-control" placeholder="Enter Rainfall(mm)" >
+                                  </div>
+                                  </td>
+                                </tr>
+                      </table>
+
+                          <!-- Section 2 -->
+                          <div>
+                              <table id="example1" class="table table-bordered table-striped">
+                                <tr>
+                                  <td>
+                                    <div class="input-group">
+                                      <span class="input-group-addon">Unit of Wind Speed</span>
+                                      <select  name="UnitOfWindSpeed"  [(ngModel)]="form.UnitOfWindSpeed"  onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter the Unit of Wind Speed" >
+                                        <option value=""></option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+
+
+
+                                      </select>
+                                    </div>
+                                  </td>
+                                  <td>
+                                     <div class="input-group">
+                                      <span class="input-group-addon">Ind. or omission of precipitation</span>
+                                      <select name="IndOrOmissionOfPrecipitation" [(ngModel)]="form.IndOrOmissionOfPrecipitation"  onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter the Ind. or omission of precipitation " >
+                                        <option value=""></option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+
+                                      </select>
+                                    </div>
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td>
+                                    <div class="input-group">
+                                      <span class="input-group-addon">Type of station/present & past weather</span>
+                                      <select name="TypeOfStation_Present_Past_Weather"  [(ngModel)]="form.TypeOfStation_Present_Past_Weather"  onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter the Type of station/present & past weather" >
+                                        <option value=""></option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+
+                                      </select>
+                                    </div>
+                                  </td>
+                                  <td>
+                                     <div class="input-group">
+                                      <span class="input-group-addon">Height Of Lowest Cloud</span>
+                                      <select  name="HeightOfLowestCloud"  [(ngModel)]="form.HeightOfLowestCloud"  onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter the Height Of The Lowest Cloud" >
+                                        <option value=""></option>
+
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+
+                                      </select>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                     <div class="input-group">
+                                      <span class="input-group-addon">Standard isobaric surface</span>
+                                      <input type="text" name="StandardIsobaricSurface"  value=""  [(ngModel)]="form.StandardIsobaricSurface" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter the Standard isobaric surface" >
+                                    </div>
+                                  </td>
+                                  <td>
+
+                                    <div class="input-group">
+                                      <span class="input-group-addon">Geopotential Of Standard Isobaric Surface</span>
+                                      <input type="text"  name="GPM"  [(ngModel)]="form.GPM"   value="" class="form-control"  placeholder="Enter the Geopotential Of Standard Isobaric Surface" >
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="input-group">
+                                      <span class="input-group-addon">Duration Of Period Of Precipitation</span>
+                                      <input type="text"  name="CI_OfPrecipitation"  [(ngModel)]="form.CI_OfPrecipitation"    value="" class="form-control" placeholder="Enter the Duration Of Period Of Precipitation" >
+                                    </div>
+                                  </td>
+                                  <td>
+
+                                  </td>
+                                </tr>
+                              </table>
+                            </div>
+
+                            <!-- Section 3 -->
+
+                            <div >
+                              <table id="example1" class="table table-bordered table-striped">
+                              <tr>
+                                <td>
+                                  <div class ="input-group">
+
+                                      <span class="input-group-addon">PRESENT WEATHER CODE</span>
+                          <input type="text" name="Present_WeatherCode"  [(ngModel)]="form.Present_WeatherCode"  onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter PRESENT WEATHER CODE" >
+
+                                  </div>
+                                </td>
+                                <td>
+                                    <div class="input-group">
+                                    <span class="input-group-addon">PRESENT WEATHER</span>
+                                    <select name="Present_Weather"  [(ngModel)]="form.Present_Weather"    class="form-control" placeholder="Enter PRESENT WEATHER" >
+                                      <option value="">--Select PRESENT WEATHER </option>
+                                      <option value="FG">FG</option>  <!--FOG -->
+                                      <option value="HZ">HZ</option>  <!--HAZE -->
+                                      <option value="TS">TS</option>  <!--THUNDERSTORM -->
+                                      <option value="LL">LL</option>  <!--LIGHTENING -->
+                                      <option value="BR">BR</option>  <!--MIST -->
+                                      <option value="GR">GR</option>  <!--HAIL -->
+                                      <option value="DZ">DZ</option>  <!--DRIZZLE -->
+                                      <option value="RA">RA</option>  <!--RAINFALL -->
+                                    </select>
+                                    </div>
+                                  </td>
+                              </tr>
+
+                              <tr>
+                                  <td>
+                                    <div class="input-group">
+                                     <span class="input-group-addon">Past Weather</span>
+                                     <input type="text" name="Present_Weather"  [(ngModel)]="form.Present_Weather"    class="form-control" placeholder=" Enter Past Weather " >
+                                   </div>
+                                  </td>
+                                  <td>
+
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                      <div class="input-group">
+                                      <span class="input-group-addon">VISIBILITY</span>
+                                      <input type="text" name="Visibility"  [(ngModel)]="form.Visibility"  onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter VISIBILITY" >
+                                    </div>
+                                    </td>
+                                    <td>
+                                     <div class="input-group">
+                                      <span class="input-group-addon">GUSTING(KTS)</span>
+                                      <input type="text" name="Gusting"  [(ngModel)]="form.Gusting"  onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter GUSTING (KTS)" >
+                                    </div>
+                                    </td>
+                                  </tr>
+
+                                  <tr>
+                                      <td colspan="2" align = "center"><b>wind</b></td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                         <div class="input-group">
+                                          <span class="input-group-addon">WIND DIRECTION</span>
+                                          <input type="text" name="Wind_Direction"  [(ngModel)]="form.Wind_Direction"  onkeyup="allowIntegerInputOnly(this)"   class="form-control"  placeholder="Enter WIND DIRECTION" >
+                                        </div>
+                                      </td>
+                                      <td>
+                                         <div class="input-group">
+                                          <span class="input-group-addon">WIND SPEED(KTS)</span>
+                                          <input type="text" name="Wind_Speed"  [(ngModel)]="form.Wind_Speed"    class="form-control"  placeholder="Enter WIND SPEED(KTS)" >
+                                        </div>
+                                      </td>
+                                    </tr>
+                                     <tr id="hideformetar1" >
+                                          <td>
+                                            <div class="input-group">
+                                              <span class="input-group-addon">SUN DURATION</span>
+                                              <input type="text" name="sunduration"  [(ngModel)]="form.sunduration"    class="form-control"    placeholder="Enter the Duration of Sunshine" >
+                                            </div>
+                                          </td>
+                                          <td>
+                                            <div class="input-group">
+                                              <span class="input-group-addon">WIND RUN</span>
+                                              <input type="text" name="windrun"   [(ngModel)]="form.windrun"   class="form-control"  placeholder=" Enter the  WIND RUN" >
+                                            </div>
+
+                                          </td>
+                                        </tr>
+                                        <tr><td  colspan="2" align = "center" ><b>Rainfall & Temperature:</b></td></tr>
+                                        <tr>
+                                          <td >
+                                            <div class="input-group">
+                                            <span class="input-group-addon">Dry Bulb</span>
+                                            <input type="text" name="Dry_Bulb"  [(ngModel)]="form.Dry_Bulb"  onkeyup="allowIntegerInputOnly(this)"   class="form-control"  placeholder="Enter Dry Bulb" >
+                                          </div>
+                                          </td>
+                                          <td>
+                                              <div class="input-group">
+                                              <span class="input-group-addon">Wet Bulb</span>
+                                              <input type="text" name="Wet_Bulb"  [(ngModel)]="form.Wet_Bulb"  onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter Wet Bulb" >
+                                            </div>
+                                            </td>
+                                        </tr>
+
+                              </table>
+                            </div>
+
+                          <!-- Section 4 -->
+
+                          <div >
+                              <table id="example1" class="table table-bordered table-striped">
+                                <tr>
+                                  <td>
+                                      <div class="input-group">
+                                          <span class="input-group-addon">Attd.Thermo.(C)</span>
+                                          <input type="text" name="AttdThermo"  [(ngModel)]="form.AttdThermo" onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter ATTD.THERMO." >
+                                        </div> <br>
+
+                                        <div class="input-group">
+                                          <span class="input-group-addon">Pr.As Read(C)</span>
+                                          <input type="text" name="PrAsRead"  [(ngModel)]="form.PrAsRead"  onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter Pr.As Read" >
+                                        </div>
+                                  </td>
+                                  <td>
+                                      <div class="input-group">
+                                        <span class="input-group-addon">Correction</span>
+                                        <input type="text" name="Correction"  [(ngModel)]="form.Correction"  onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter Correction" >
+                                      </div> <br>
+
+                                      <div class="input-group">
+                                        <span class="input-group-addon">C.L.P(mb)</span>
+                                        <input type="text" name="CLP" [(ngModel)]="form.CLP"  onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter C.L.P(mb)" >
+                                      </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    <div class="input-group">
+                                    <span class="input-group-addon">MIN TEMPERATURE(degrees celsius)</span>
+
+                                        <input id="inputCelsius" name="Min_Read" [(ngModel)]="form.Min_Read" type="number" value="" onkeyup="allowIntegerInputOnly(this)"    class="form-control"  placeholder="Enter min temperature" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
+                                     </div>
+                                    </td>
+                                    <td>
+                                    <div class="input-group">
+                                    <span class="input-group-addon">MIN TEMPERATURE(degrees Fahrenheit)</span>
+                                      <input id="Piche_Read" name="Piche_Read" [(ngModel)]="form.Min_Read"  disabled onkeyup="allowIntegerInputOnly(this)" class="form-control"  value=""  placeholder="Enter min temperature" >
+
+                                     </div>
+                                    </td>
+
+                                    </tr>
+                                    <tr>
+                                    <td>
+                                      <br>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">MAX TEMPERATURE(degrees celicious)</span>
+                                          <input type="text" name="Max_Read" [(ngModel)]="form.Max_Read"   onkeyup="allowIntegerInputOnly(this)"   [(ngModel)]="form.TotalAmountOfLowClouds"  class="form-control" placeholder="Enter max temperature" >
+                                    </div>
+
+                                            </td>
+                                            <td>
+                                              <br>
+
+                                              <div class="input-group">
+                                                <span class="input-group-addon">M.S.L.Pr(mb) or 850mb. Ht.(gpm)</span>
+                                                <input type="text" name="MSLPr" [(ngModel)]="form.MSLPr"  onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter M.S.L.Pr(mb) or 850mb. Ht.(gpm)" >
+                                              </div>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                              <td colspan="2" align = "center">Time marks</td>
+                                            </tr>
+
+                                            <tr>
+                                              <td>
+                                                 <div class="input-group">
+                                                  <span class="input-group-addon">TIME MARKS BAROGRAPH</span>
+                                                  <input type="text" name="TimeMarksBarograph"  [(ngModel)]="form.TimeMarksBarograph"  onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter TIME MARKS BAROGRAPH" >
+                                                </div>
+                                              </td>
+                                              <td>
+                                                 <div class="input-group">
+                                                  <span class="input-group-addon">TIME MARKS ANEMOGRAPH</span>
+                                                  <input type="text" name="TimeMarksAnemograph"  [(ngModel)]="form.TotalAmountOfLowClouds"  onkeyup="allowIntegerInputOnly(this)"  class="form-control" placeholder="Enter TIME MARKS ANEMOGRAPH" >
+                                                </div>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                  <div class="input-group">
+                                                    <span class="input-group-addon">Other T/MARKS </span>
+                                                    <input type="text" name="OtherTMarks"  [(ngModel)]="form.OtherTMarks"  onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder="Enter Other T/MARKS" >
+                                                  </div>
+                                                </td>
+                                                <td>
+                                                   <div class="input-group">
+                                                    <span class="input-group-addon">Remarks or any other Observations </span>
+                                                    <input type="text" name="Remarks"  [(ngModel)]="form.Remarks"  onkeyup="allowCharactersInputOnly(this)"  class="form-control" placeholder="Enter Remarks or any other Observations" >
+                                                  </div>
+                                                </td>
+                                              </tr>
+
+                              </table>
+                          </div>
+
+                          <!-- Section 5 -->
+                          <div>
+                              <table id="example1" class="table table-bordered table-striped">
+                                <tr>
+                                  <td>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Unit of Wind Speed</span>
+                                        <select name="UnitOfWindSpeed"  [(ngModel)]="form.UnitOfWindSpeed" onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter the Unit of Wind Speed" >
+                                          <option value="">--Select Unit Of Wind Speed </option>
+
+                                          <option value="1">1</option>
+                                          <option value="2">2</option>
+                                          <option value="3">3</option>
+                                          <option value="4">4</option>
+                                          <option value="5">5</option>
+                                          <option value="6">6</option>
+
+
+
+                                        </select>
+                                    </div>
+                                  </td>
+                                  <td>
+                                      <div class="input-group">
+                                       <span class="input-group-addon">Ind. or omission of precipitation</span>
+                                       <select name="IndOrOmissionOfPrecipitation"  [(ngModel)]="form.IndOrOmissionOfPrecipitation"  onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter the Ind. or omission of precipitation " >
+                                         <option value="">--Select Ind. or omission of precipitation </option>
+
+                                         <option value="1">1</option>
+                                         <option value="2">2</option>
+                                         <option value="3">3</option>
+
+                                       </select>
+                                     </div>
+                                   </td>
+                                </tr>
+                                <tr>
+                               <td>
+                                   <div class="input-group">
+                                    <span class="input-group-addon">Height Of Lowest Cloud</span>
+                                    <select name="HeightOfLowestCloud"  [(ngModel)]="form.HeightOfLowestCloud"  onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter the Height Of The Lowest Cloud" >
+                                      <option value="">--Select Height Of Lowest Cloud </option>
+
+                                      <option value="1">1</option>
+                                      <option value="2">2</option>
+                                      <option value="3">3</option>
+                                      <option value="4">4</option>
+                                      <option value="5">5</option>
+                                      <option value="6">6</option>
+                                      <option value="7">7</option>
+                                      <option value="8">8</option>
+                                      <option value="9">9</option>
+                                      <option value="10">10</option>
+
+                                    </select>
+                                  </div>
+                                </td>
+                                </tr>
+                                 <tr>
+                                    <td>
+                                       <div class="input-group">
+                                        <span class="input-group-addon">Standard isobaric surface</span>
+                                        <input type="text" name="StandardIsobaricSurface"  [(ngModel)]="form.StandardIsobaricSurface"  onkeyup="allowIntegerInputOnly(this)"  class="form-control"  placeholder="Enter the Standard isobaric surface" >
+                                      </div>
+                                    </td>
+                                    <td>
+
+                                      <div class="input-group">
+                                        <span class="input-group-addon">Geopotential Of Standard Isobaric Surface</span>
+                                        <input type="text" name="GPM"  [(ngModel)]="form.GPM"   class="form-control"  placeholder="Enter the Geopotential Of Standard Isobaric Surface" >
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                        <div class="input-group">
+                                          <span class="input-group-addon">Duration Of Period Of Precipitation</span>
+                                          <input type="text" name="DurationOfPeriodOfPrecipitation"  [(ngModel)]="form.DurationOfPeriodOfPrecipitation"   class="form-control" placeholder="Enter the Duration Of Period Of Precipitation" >
+                                        </div>
+                                      </td>
+                                      <td>
+
+                                      </td>
+                                    </tr>
+
+                              </table>
+                          </div>
+
+                          <!-- Section 6 -->
+                          <div>
+                              <table id="example1" class="table table-bordered table-striped">
+                                  <tr>
+                                      <td>
+                                        <div class="input-group">
+                                        <span class="input-group-addon">Grass Mininum temperature</span>
+                                        <input type="text"  name="GrassMinTemp"  [(ngModel)]="form.GrassMinTemp"  value=""  class="form-control" placeholder=" Enter Grass Mininum temperature " >
+                                      </div>
+                                      </td>
+                                      <td>
+                                        <div class="input-group">
+                                          <span class="input-group-addon">Character and Intensity of Precipitation</span>
+                                          <input type="text"  name="CI_OfPrecipitation"  [(ngModel)]="form.CI_OfPrecipitation"   value=""  class="form-control"  placeholder=" Enter Character and Intensity of Precipitation" >
+                                        </div>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                          <div class="input-group">
+                                            <span class="input-group-addon">Beginning or End of Precipitation</span>
+                                            <input type="text"  name="BE_OfPrecipitation" value=""  [(ngModel)]="form.BE_OfPrecipitation"     class="form-control"    placeholder="Enter Beginning or End of Precipitation" >
+                                          </div>
+                                        </td>
+                                        <td>
+                                           <div class="input-group">
+                                            <span class="input-group-addon">Indicator of type of intrumentation</span>
+                                            <input type="text"  name="IndicatorOfTypeOfIntrumentation"   [(ngModel)]="form.IndicatorOfTypeOfIntrumentation"    class="form-control"    placeholder="Enter the Indicator of type of intrumentation" >
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                          <td>
+                                           <div class="input-group">
+                                            <span class="input-group-addon">Sign of Pressure Change</span>
+                                            <input type="text"  name="SignOfPressureChange"   [(ngModel)]="form.SignOfPressureChange"    class="form-control"    placeholder="Enter the Sign of Pressure Change" >
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="input-group">
+                                            <span class="input-group-addon">Supplementary Information</span>
+                                            <input type="text"  name="Supp_Info"   [(ngModel)]="form.Supp_Info"  onkeyup="allowCharactersInputOnly(this)"  class="form-control"   placeholder="Enter Supplementary Information" >
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                          <td>
+                                            <div class="input-group">
+                                              <span class="input-group-addon">Vapour Pressure</span>
+                                              <input type="text" name="VapourPressure" value=""   [(ngModel)]="form.VapourPressure"  onkeyup="allowIntegerInputOnly(this)"  class="form-control"   placeholder="Enter the Vapour Pressure" >
+                                            </div>
+                                          </td>
+                                          <td>
+                                            <div class="input-group">
+                                              <span class="input-group-addon">TH GRAPH</span>
+                                              <input type="text"  name="T_H_Graph" value=""   [(ngModel)]="form.T_H_Graph"    class="form-control"  placeholder=" Enter TH GRAPH" >
+                                            </div>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td colspan = "1">
+                                              <span class="input-group-addon">TREND</span>
+                                              <textarea  name="trend" value=""  class="form-control" style="height:40px;"  [(ngModel)]="form.trend"  onkeyup=""></textarea>
+                                          </td>
+                                          <td>
+                                            <div>
+                                                <span class="input-group-addon">Approved</span>
+                                                <select name="Approved"  [(ngModel)]="form.Approved"  disabled  class="form-control" >
+                                                    <option value=""></option>
+                                                    <option value="TRUE">TRUE</option>
+                                                    <option value="FALSE">FALSE</option>
+                                                  </select>
+                                                  <input type="hidden" name="Approved"  [(ngModel)]="form.Approved" >
+                                                  <select>
+                                                      <option value=""></option>
+                                                      <option value="TRUE">TRUE</option>
+                                                      <option value="FALSE">FALSE</option>
+                                                  </select>
+                                            </div>
+                                          </td>
+                                        </tr>
+                              </table>
+                            </div>
+                            <button class="btn btn-success">Submit Observationslip</button>
+                            <div *ngIf="f.submitted && failedToSubmit" class="alert alert-warning">
+                              Storing data failed!<br/>{{errorMessage}}
+                            </div>
+                 </form>
+            </div>
+            </section>
+        </aside>
+      </ng-template>
+

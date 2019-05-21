@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -13,7 +13,9 @@ import { AdminComponent } from './admin/admin.component';
 import { PmComponent } from './pm/pm.component';
 
 import { httpInterceptorProviders } from './auth/auth-interceptor';
-
+import { ObservationslipformComponent } from './observationslipform/observationslipform.component';
+import { ViewobservationslipComponent } from './components/viewobservationslip/viewobservationslip.component';
+import { DataService } from './services/data.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,15 +24,19 @@ import { httpInterceptorProviders } from './auth/auth-interceptor';
     RegisterComponent,
     HomeComponent,
     AdminComponent,
-    PmComponent
+    PmComponent,
+    ObservationslipformComponent,
+    ViewobservationslipComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
+
   ],
-  providers: [httpInterceptorProviders],
+  providers: [httpInterceptorProviders, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

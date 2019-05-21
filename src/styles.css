@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+/* @import '~bootstrap/dist/css/bootstrap.min.css'; */
+body{
+  -ms-overflow-style:  scrollbar;
+  -webkit-app-region: drag;
+}
+a,
+input[type="submit"],
+input[type="reset"],
+input[type="text"],
+button,
+textarea{
+  -webkit-app-region: no-drag;
+}

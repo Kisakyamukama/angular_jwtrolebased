@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
+// import { resolveSoa } from 'dns';
 
 @Component({
   selector: 'app-user',
