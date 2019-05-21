@@ -14,6 +14,7 @@ import { PmComponent } from './pm/pm.component';
 
 import { httpInterceptorProviders } from './auth/auth-interceptor';
 import { ObservationslipformComponent } from './observationslipform/observationslipform.component';
+import { ViewobservationslipComponent } from './components/viewobservationslip/viewobservationslip.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ObservationslipformComponent } from './observationslipform/observations
     HomeComponent,
     AdminComponent,
     PmComponent,
-    ObservationslipformComponent
+    ObservationslipformComponent,
+    ViewobservationslipComponent
   ],
   imports: [
     BrowserModule,
