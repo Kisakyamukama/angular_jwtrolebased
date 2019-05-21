@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "main": "main.js",
   "build": {
-  "directories": {
-  "output": "release/",
-  "builsResources": "build",
-  "app":"build"
+    "directories": {
+      "output": "release/",
+      "builsResources": "build",
+      "app": "build"
     }
   },
   "scripts": {
@@ -36,7 +36,7 @@
     "core-js": "^2.5.4",
     "electron-url": "0.0.1",
     "ngx-pagination": "^3.2.1",
-    "rxjs": "^6.0.0",
+    "rxjs": "^6.5.2",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

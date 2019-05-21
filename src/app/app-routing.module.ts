@@ -40,11 +40,11 @@ const routes: Routes = [
         component: ObservationslipformComponent
 
     },
-    // {
-    //     path: 'view-observationslip',
-    //     component: ViewobservationslipComponent
-    //
-    // },
+    {
+        path: 'view-observationslips',
+        component: ViewobservationslipComponent
+
+    },
     {
         path: '',
         redirectTo: 'home',

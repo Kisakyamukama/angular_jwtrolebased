@@ -15,7 +15,7 @@ import { PmComponent } from './pm/pm.component';
 import { httpInterceptorProviders } from './auth/auth-interceptor';
 import { ObservationslipformComponent } from './observationslipform/observationslipform.component';
 import { ViewobservationslipComponent } from './components/viewobservationslip/viewobservationslip.component';
-
+import { DataService } from './services/data.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +36,7 @@ import { ViewobservationslipComponent } from './components/viewobservationslip/v
     HttpClientModule
 
   ],
-  providers: [httpInterceptorProviders],
+  providers: [httpInterceptorProviders, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
